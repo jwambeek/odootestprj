@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="db_schenker_form_view" model="ir.ui.view">
+            <field name="name">stock.picking</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='carrier_id']" position='after'>
+                    <field name="db_schenker_shipment_id" readonly="1" attrs="{'invisible': [('delivery_type','!=','dbschenker')]}"/>
+                    <field name="db_schenker_book_shipment_id" readonly="1" attrs="{'invisible': [('delivery_type','!=','dbschenker')]}"/>
+                    <field name="number_of_labels" required="1" attrs="{'invisible': [('delivery_type','!=','dbschenker')]}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
