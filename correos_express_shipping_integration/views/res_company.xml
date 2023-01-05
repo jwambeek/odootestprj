@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="correos_express_credential_configuration" model="ir.ui.view">
+        <field name="name">Correos Configuration</field>
+        <field name="model">res.company</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[last()]" position="after">
+                <page string="Correos Express Configuration">
+                    <group>
+                        <field name="use_correos_express_shipping_provider"/>
+                    </group>
+                    <group attrs="{'invisible': [('use_correos_express_shipping_provider', '!=', True)]}">
+                        <field name="correos_express_username"
+                               attrs="{'required':[('use_correos_express_shipping_provider','=',True)]}"/>
+                        <field name="correos_express_password"
+                               attrs="{'required':[('use_correos_express_shipping_provider','=',True)]}"/>
+                        <field name="correos_express_customer_code"
+                               attrs="{'required':[('use_correos_express_shipping_provider','=',True)]}"/>
+                        <field name="correso_express_sender_code"
+                               attrs="{'required':[('use_correos_express_shipping_provider','=',True)]}"/>
+                        <field name="correos_express_api_url"
+                               attrs="{'required':[('use_correos_express_shipping_provider','=',True)]}"/>
+                        <field name="correos_express_tracking_url"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

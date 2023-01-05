@@ -1,0 +1,169 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* correos_express_shipping_integration
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-18 17:46+0000\n"
+"PO-Revision-Date: 2020-06-18 17:46+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: correos_express_shipping_integration
+#: model:ir.model.fields,field_description:correos_express_shipping_integration.field_res_company__use_correos_express_shipping_provider
+msgid "Are You Using Correos Express?"
+msgstr "¿Estás utilizando Correos Express?"
+
+#. module: correos_express_shipping_integration
+#: selection:delivery.carrier,delivery_type:0
+msgid "Based on Rules"
+msgstr "En base a reglas"
+
+#. module: correos_express_shipping_integration
+#: model:ir.model.fields,field_description:correos_express_shipping_integration.field_delivery_carrier__correos_express_carriage
+msgid "Carriage"
+msgstr "Transporte"
+
+#. module: correos_express_shipping_integration
+#: model:ir.model.fields,field_description:correos_express_shipping_integration.field_product_packaging__package_carrier_type
+msgid "Carrier"
+msgstr "Transportista"
+
+#. module: correos_express_shipping_integration
+#: model:ir.model,name:correos_express_shipping_integration.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: correos_express_shipping_integration
+#: model:ir.model.fields,field_description:correos_express_shipping_integration.field_res_company__correos_express_api_url
+msgid "API URl"
+msgstr "API URL"
+
+#. module: correos_express_shipping_integration
+#: selection:delivery.carrier,delivery_type:0
+#: selection:product.packaging,package_carrier_type:0
+msgid "Correos Express"
+msgstr "Correos Express"
+
+#. module: correos_express_shipping_integration
+#: model_terms:ir.ui.view,arch_db:correos_express_shipping_integration.correos_express_credential_configuration
+#: model_terms:ir.ui.view,arch_db:correos_express_shipping_integration.correos_express_deleivery_method_configuration
+msgid "Correos Express Configuration"
+msgstr "Correos Express Configuración"
+
+#. module: correos_express_shipping_integration
+#: model:ir.model.fields,field_description:correos_express_shipping_integration.field_res_company__correos_express_customer_code
+msgid "Customer Code"
+msgstr "Código de Cliente"
+
+#. module: correos_express_shipping_integration
+#: model:ir.model.fields,field_description:correos_express_shipping_integration.field_res_company__correos_express_password
+msgid "Password"
+msgstr "Contraseña"
+
+#. module: correos_express_shipping_integration
+#: model:ir.model.fields,field_description:correos_express_shipping_integration.field_res_company__correso_express_sender_code
+msgid "Sender Code"
+msgstr "Código de remitente"
+
+#. module: correos_express_shipping_integration
+#: model:ir.model.fields,field_description:correos_express_shipping_integration.field_stock_picking__correos_express_shipment_number
+msgid "Correos Express Shipment Number"
+msgstr "Número de envío de Correos Express"
+
+#. module: correos_express_shipping_integration
+#: model:ir.model.fields,field_description:correos_express_shipping_integration.field_res_company__correos_express_username
+msgid "Username"
+msgstr "Nombre de Usuario"
+
+#. module: correos_express_shipping_integration
+#: model:ir.model.fields,field_description:correos_express_shipping_integration.field_delivery_carrier__correos_express_packaging_id
+msgid "Default Package Type"
+msgstr "Tipo de paquete predeterminado"
+
+#. module: correos_express_shipping_integration
+#: model:ir.model,name:correos_express_shipping_integration.model_delivery_carrier
+msgid "Delivery Methods"
+msgstr "Método de envío"
+
+#. module: correos_express_shipping_integration
+#: selection:delivery.carrier,correos_express_carriage:0
+msgid "Due D"
+msgstr "D-Debido"
+
+#. module: correos_express_shipping_integration
+#: selection:delivery.carrier,delivery_type:0
+msgid "Fixed Price"
+msgstr "Precio fijo"
+
+#. module: correos_express_shipping_integration
+#: model:ir.model.fields,help:correos_express_shipping_integration.field_res_company__use_correos_express_shipping_provider
+msgid "If use Correos Express shipping Integration than value set TRUE."
+msgstr "Si usa la integración de envío Correos Express, el valor se establece como VERDADERO."
+
+#. module: correos_express_shipping_integration
+#: selection:product.packaging,package_carrier_type:0
+msgid "No carrier integration"
+msgstr "Sin integración de transportista"
+
+#. module: correos_express_shipping_integration
+#: selection:delivery.carrier,correos_express_carriage:0
+msgid "Paid P"
+msgstr "P-Pagado"
+
+#. module: correos_express_shipping_integration
+#: model:ir.model,name:correos_express_shipping_integration.model_product_packaging
+msgid "Product Packaging"
+msgstr "Empaquetado del producto"
+
+#. module: correos_express_shipping_integration
+#: model:ir.model.fields,help:correos_express_shipping_integration.field_delivery_carrier__correos_express_product_code
+msgid "Provided by Correos Express"
+msgstr "Proporcionado por Correos Express"
+
+#. module: correos_express_shipping_integration
+#: model:ir.model.fields,field_description:correos_express_shipping_integration.field_delivery_carrier__delivery_type
+msgid "Provider"
+msgstr "Proveedor"
+
+#. module: correos_express_shipping_integration
+#: model:ir.model.fields,help:correos_express_shipping_integration.field_res_company__correso_express_sender_code
+msgid "Sender's Code ( provided by Correos Express)"
+msgstr "Código del remitente (proporcionado por Correos Express)"
+
+#. module: correos_express_shipping_integration
+#: model:ir.model.fields,field_description:correos_express_shipping_integration.field_delivery_carrier__correos_express_product_code
+msgid "Service Code"
+msgstr "Código de servicio"
+
+#. module: correos_express_shipping_integration
+#: model:ir.model.fields,help:correos_express_shipping_integration.field_stock_picking__correos_express_shipment_number
+msgid "Shipment number generated once we click on validate button"
+msgstr "Número de envío generado una vez que hacemos clic en el botón validar"
+
+#. module: correos_express_shipping_integration
+#: model:ir.model,name:correos_express_shipping_integration.model_stock_picking
+msgid "Transfer"
+msgstr "Albarán"
+
+#. module: correos_express_shipping_integration
+#: model:ir.model.fields,help:correos_express_shipping_integration.field_res_company__correos_express_customer_code
+msgid "Your Correos Account Customer Code"
+msgstr "Su cuenta de Correos: Código de cliente"
+
+#. module: correos_express_shipping_integration
+#: model:ir.model.fields,help:correos_express_shipping_integration.field_res_company__correos_express_password
+msgid "Your Correos Account Password"
+msgstr "Su cuenta de Correos: Contraseña"
+
+#. module: correos_express_shipping_integration
+#: model:ir.model.fields,help:correos_express_shipping_integration.field_res_company__correos_express_username
+msgid "Your Correos Account Username"
+msgstr "Su cuenta de Correos: Usuario"
+
