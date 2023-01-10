@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_prestashop_store_details,prestashop_store_details,model_prestashop_store_details,account.group_account_manager,1,1,1,1
+access_prestashop_operation,prestashop_operation,model_prestashop_operation,account.group_account_manager,1,1,1,1
+access_prestashop_operation_details,prestashop_operation_details,model_prestashop_operation_details,account.group_account_manager,1,1,1,1
+access_prestashop_product_detail,prestashop_product_detail,model_prestashop_product_detail,account.group_account_manager,1,1,1,1

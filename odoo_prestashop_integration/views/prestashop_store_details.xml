@@ -1,0 +1,191 @@
+<odoo>
+    <data>
+
+        <record id="view_prestashop_store_details" model="ir.ui.view">
+            <field name="name">prestashop store Details</field>
+            <field name="model">prestashop.store.details</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="prestashop Store Details">
+                    <field name="name"/>
+                    <field name="prestashop_api_key"/>
+                    <field name="prestashop_api_url"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_form_prestashop_store_details" model="ir.ui.view">
+            <field name="name">prestashop Store Details</field>
+            <field name="model">prestashop.store.details</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="prestashop Store Details">
+                    <header>
+                        <button type="object" name="import_products_from_prestashop"
+                                string="Import Products" class="oe_highlight"/>
+
+                        <button type="object" name="import_categories_from_prestashop"
+                                string="Import Categories" class="oe_highlight"/>
+
+                        <button type="object" name="import_order_from_prestashop"
+                                string="Import Orders" class="oe_highlight"/>
+                        <button type="object" name="import_product_attribute_from_prestashop"
+                                string="Import Product Attribute" class="oe_highlight"/>
+
+                        <button type="object" name="import_product_stock_from_prestashop"
+                                string="Import Product Stock" class="oe_highlight"/>
+
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button type="object" name="action_view_prestashop_categories" class="oe_stat_button"
+                                    icon="fa-book" string="Product Category">
+                            </button>
+                            <button type="object" name="action_view_prestashop_product" class="oe_stat_button"
+                                    icon="fa-cubes" string="Products">
+                            </button>
+                            <button type="object" name="action_view_prestashop_product_detail" class="oe_stat_button"
+                                    icon="fa-cubes" string="Products Variant">
+                            </button>
+
+                            <button type="object" name="action_prestashop_product_detail" class="oe_stat_button"
+                                    icon="fa-book" string="Prestashop Product Detail">
+                            </button>
+
+                            <button type="object" name="action_view_prestashop_customers" class="oe_stat_button"
+                                    icon="fa-user" string="Customer">
+                            </button>
+                            <button type="object" name="action_view_prestashop_orders" class="oe_stat_button"
+                                    icon="fa-cart-plus" string="Orders">
+                            </button>
+                            <button type="object" name="action_view_prestashop_message_detail" class="oe_stat_button"
+                                    icon="fa-book" string="Messages">
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name" required="1"/>
+                                <field name="prestashop_api_key" required="1"/>
+                                <field name="prestashop_api_url" widget="url" required="1"/>
+                                <field name="warehouse_id" required="1"/>
+                                <field name="import_single_data" widget="boolean_toggle"/>
+                                <field name="prestashop_single_data_id" attrs="{'invisible': [('import_single_data', '!=', True)], 'required': [('import_single_data', '=', True)]}" />
+                                <field name="start_range"  attrs="{'invisible': [('import_single_data', '=', True)], 'required': [('import_single_data', '!=', True)]}"/>
+                                <field name="end_range" attrs="{'invisible': [('import_single_data', '=', True)], 'required': [('import_single_data', '!=', True)]}"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--        Kanban view-->
+        <record id="process_configuration_view_kanban" model="ir.ui.view">
+            <field name="name">Process.Configuration.Kanban</field>
+            <field name="model">prestashop.store.details</field>
+            <field name="arch" type="xml">
+                <kanban class="oe_background_grey o_kanban_dashboard o_account_kanban">
+                    <field name="id"/>
+                    <field name="name"/>
+                    <field name="color"/>
+                    <field name="image"/>
+                    <field name="total_order_count"/>
+                    <field name="total_product_count"/>
+                    <field name="total_customer_count"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="#{kanban_color(record.color.raw_value)}">
+                                <t t-value="record.color.raw_value" t-set="marketplace_type"/>
+                                <div t-attf-class="o_kanban_card_header">
+                                    <div class="o_kanban_card_header_title">
+                                        <div class="o_primary">
+                                            <img alt="Marketplace Instance"
+                                                 t-att-src="kanban_image('process.configuration.detail', 'image_medium', record.id.raw_value)"
+                                                 class="oe_kanban_avatar img-fluid" width="55" height="55"/>
+                                            <a type="object" name="prestashop_open_form_view">
+                                                <field name="name"/>
+                                            </a>
+                                        </div>
+                                        <br/>
+                                    </div>
+                                    <div class="o_kanban_manage_button_section">
+                                        <a class="o_kanban_manage_toggle_button" href="#">
+                                            <i class="fa fa-ellipsis-v" aria-label="Selection" role="img"
+                                               title="Selection"/>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="container o_kanban_card_content">
+                                    <div class="row mt16">
+                                        <div class="col-3 border-right">
+                                            <a name="action_view_prestashop_customers"
+                                               type="object" class="d-flex flex-column align-items-center">
+                                                <span class="font-weight-bold">
+                                                    <t t-esc="record.total_customer_count.value"/>
+                                                </span>
+                                                <span class="text-muted">Customers</span>
+                                            </a>
+                                        </div>
+                                        <div class="col-3 border-right">
+                                            <a name="action_view_prestashop_product"
+                                               type="object" class="d-flex flex-column align-items-center">
+                                                <span class="font-weight-bold">
+                                                    <t t-esc="record.total_product_count.value"/>
+                                                </span>
+                                                <span class="text-muted">Products</span>
+                                            </a>
+                                        </div>
+                                        <div class="col-3 border-right">
+                                            <a name="action_view_prestashop_orders"
+                                               type="object" class="d-flex flex-column align-items-center">
+                                                <span class="font-weight-bold">
+                                                    <t t-esc="record.total_order_count.value"/>
+                                                </span>
+                                                <span class="text-muted">Orders</span>
+                                            </a>
+                                        </div>
+                                        <div class="col-2 border-right">
+                                            <a name="action_view_prestashop_message_detail"
+                                               type="object" class="d-flex flex-column align-items-center">
+                                                <span class="font-weight-bold">
+                                                    <i class="fa fa-book"/>
+                                                </span>
+                                                <span class="text-muted">Logs</span>
+                                            </a>
+                                        </div>
+                                        <div class="container o_kanban_card_manage_pane dropdown-menu" role="menu">
+                                            <div t-if="widget.editable" class="o_kanban_card_manage_settings row">
+                                                <div class="col-8" role="menuitem" aria-haspopup="true">
+                                                    <ul role="menu" class="oe_kanban_colorpicker" data-field="color"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="action_prestashop_store_details" model="ir.actions.act_window">
+            <field name="name">Prestashop Store Details</field>
+            <field name="res_model">prestashop.store.details</field>
+            <field name='view_mode'>kanban,tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a prestashop Store Details.
+                </p>
+            </field>
+        </record>
+
+<!--        <menuitem name="Prestashop Integration" id="prestashop_integration"-->
+<!--                  parent="stock.menu_stock_config_settings" sequence="5"/>-->
+<!--        <menuitem name="Prestashop Store Details" id="menu_prestashop_store_details"-->
+<!--                  parent="prestashop_integration" action="action_prestashop_store_details"-->
+<!--                  sequence="3"/>-->
+        <menuitem id="prestashop_root" name="Prestashop" action="action_prestashop_store_details" web_icon="odoo_prestashop_integration,static/description/icon.png"/>
+
+    </data>
+</odoo>
+

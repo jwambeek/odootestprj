@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="prestashop_order_form_view" model="ir.ui.view">
+            <field name="name">Prestashop Order</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[last()]" position="after">
+                    <page name="Prestashop_info" string="Prestashop Info" attrs="{'invisible':[('prestashop_order_imported', '=', False)]}">
+                        <group>
+                            <field name="prestashop_store_id" readonly="1"/>
+                            <field name="prestashop_order_imported" readonly="1"/>
+                            <field name="prestashop_order_id" readonly="1"/>
+                            <field name="prestashop_reference" readonly="1"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

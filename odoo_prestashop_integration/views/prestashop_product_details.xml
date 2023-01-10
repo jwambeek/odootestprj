@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="view_prestashop_product_details_tree_view" model="ir.ui.view">
+            <field name="name">prestashop Product Detail</field>
+            <field name="model">prestashop.product.detail</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Prestashop Product Details" create='false'>
+                    <field name="product_id"/>
+                    <field name="prestashop_store_id"/>
+                    <field name="prestashop_product_id"/>
+                    <field name="product_combination_id"/>
+                    <field name="product_stock_id"/>
+                    <field name="product_tmpl_id"/>
+                    <field name="qty_available_in_odoo"/>
+                    <field name="qty_available_in_prestashop"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="action_prestashop_product_details" model="ir.actions.act_window">
+            <field name="name">Prestashop Product Details</field>
+            <field name="res_model">prestashop.product.detail</field>
+            <field name="view_id" ref="view_prestashop_product_details_tree_view"/>
+        </record>
+
+
+<!--        <menuitem id="menu_prestashop_product_details" name="Prestashop Product Details"-->
+<!--                  parent="prestashop_integration" sequence="5"-->
+<!--                  action="action_prestashop_product_details"/>-->
+    </data>
+</odoo>
