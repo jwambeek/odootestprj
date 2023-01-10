@@ -1,0 +1,35 @@
+# -*- coding: utf-8 -*-pack
+{
+    # App information
+    'name': 'DHL Paket(Business Customer API) Shipping Integrations',
+    'category': 'Website',
+    'version': '15.07.02.2022',
+    'summary': """Using DHL Paket(Business Customer API) Shipping Integrations we connect with DHL Paket(Business Customer API). using DHL Paket(Business Customer API) Shipping Integrations we generate the label.""",
+    'description': """
+       Using DHL Paket(Business Customer API) Shipping Integrations we connect with DHL Paket(Business Customer API). using DHL Paket(Business Customer API) Shipping Integrations we generate the label.We also Provide the dhl,bigcommerce,shiphero,gls,fedex,usps,easyship,stamp.com,dpd,shipstation,manifest report.
+""",
+
+    # Dependencies
+    'depends': ['delivery'],
+    # Views
+    'data': ['views/delivery_carrier.xml',
+        'views/res_company.xml',
+             'views/stock_picking.xml'],
+
+    # Author
+    'author': 'Vraja Technologies',
+    'website': 'http://www.vrajatechnologies.com',
+    'maintainer': 'Vraja Technologies',
+    'live_test_url': 'https://www.vrajatechnologies.com/contactus',
+    'images': ['static/description/cover.jpg'],
+    'demo': [],
+    'installable': True,
+    'application': True,
+    'auto_install': False,
+    'price': '99',
+    'currency': 'EUR',
+    'license': 'OPL-1',
+
+}
+#15.17.12.2021 old version
+#15.07.02.2022 add stock_picking,and make some other changes like swap value in userid and password etc....
